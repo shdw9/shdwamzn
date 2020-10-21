@@ -1,0 +1,8 @@
+name: AMZN
+main: me.shdwslyr.amzn.Main
+version: 1.0
+api-version: 1.15
+commands:
+    amzn:
+        description: Main command
+        usage: /<command> help
