@@ -50,6 +50,8 @@ public class Text {
   
   public static final String NO_MAILS = String.valueOf(String.valueOf(prefix)) + ChatColor.RED + "You don't have any packages";
   
+  public static final String NO_MORE_MAILS = String.valueOf(prefix) + ChatColor.RED + "That was the last mail";
+  
   public static final String NO_PAGES = String.valueOf(String.valueOf(prefix)) + ChatColor.RED + "This is the last page!";
   
   public static final NamespacedKey enchanter_namespace = new NamespacedKey((Plugin)Main.getMainInstance(), "smi");

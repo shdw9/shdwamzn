@@ -36,8 +36,7 @@ public class InventoryManager {
     if (!mailStorage.containsKey(player.getUniqueId())) {
       YamlConfiguration config = plugin.getMailConfig();
       if (config.contains("Storage." + player.getUniqueId())) {
-        @SuppressWarnings("unchecked")
-		List<HashMap<String, List<ItemStack>>> list = (List<HashMap<String, List<ItemStack>>>)config.get("Storage." + player.getUniqueId());
+        List<HashMap<String, List<ItemStack>>> list = (List<HashMap<String, List<ItemStack>>>)config.get("Storage." + player.getUniqueId());
         MailStorage storage = new MailStorage();
         storage.setStorage(list);
         mailStorage.put(player.getUniqueId(), storage);

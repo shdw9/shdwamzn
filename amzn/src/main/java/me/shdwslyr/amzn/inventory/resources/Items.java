@@ -71,7 +71,7 @@ public class Items {
     Enchanter enchanter = new Enchanter(Text.enchanter_namespace);
     ItemStack item = new ItemStack(Material.JUKEBOX);
     ItemMeta meta = item.getItemMeta();
-    meta.setDisplayName(ChatColor.GREEN + "RECIVED: " + name);
+    meta.setDisplayName(ChatColor.GREEN + "RECIEVED: " + name);
     meta.addEnchant((Enchantment)enchanter, 0, true);
     item.setItemMeta(meta);
     return item;

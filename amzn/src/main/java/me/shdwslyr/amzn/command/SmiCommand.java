@@ -77,7 +77,7 @@ public class SmiCommand implements CommandExecutor {
             }
             else if (target == player) {
             	player.sendMessage(Text.SAMEPLAYER);
-            	return true;
+                return true;
             }
             player.sendMessage(Text.PLAYER_NO_EXIST);
             return true;

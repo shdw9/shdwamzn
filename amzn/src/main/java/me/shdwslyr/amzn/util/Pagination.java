@@ -9,6 +9,7 @@ import me.shdwslyr.amzn.inventory.MailStorage;
 import me.shdwslyr.amzn.inventory.MailboxInventory;
 import me.shdwslyr.amzn.inventory.resources.Items;
 import me.shdwslyr.amzn.inventory.resources.Text;
+import me.shdwslyr.amzn.util.SoundSystem;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -67,8 +68,8 @@ public class Pagination implements InventoryHolder {
         ConfigSettingSet config = new ConfigSettingSet(this.player);
         if (config.isSoundEnabled(4)) {
           SoundSystem soundSystem = new SoundSystem(Ssound.OPEN_MAILBOX, this.player); 
-        this.isFirstOpen = false;
         }
+        this.isFirstOpen = false;
       } 
       for (HashMap<String, List<ItemStack>> map : crates) {
         for (Map.Entry<String, List<ItemStack>> entry : map.entrySet()) {
@@ -102,7 +103,7 @@ public class Pagination implements InventoryHolder {
       this.player.openInventory(this.invList.get(this.currentPage));
     } else {
       this.player.closeInventory();
-      this.player.sendMessage(Text.NO_MAILS);
+      this.player.sendMessage(Text.NO_MORE_MAILS);
     } 
   }
   
