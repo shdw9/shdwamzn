@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import java.util.HashMap;
 
@@ -69,23 +70,29 @@ public class SmiCommand implements CommandExecutor {
         if (args.length == 2) {
           if (args[0].equalsIgnoreCase("send")) {
             Player target = Bukkit.getPlayer(args[1]);
-            if (target != player) {
-              targetCheck(player, target);
-              SendMailInventory mail = new SendMailInventory();
-              mail.openInventory(player);
-              return true;
+            if (target.getGameMode() == GameMode.SURVIVAL) {
+            	if (target != player) {
+            		targetCheck(player, target);
+            		SendMailInventory mail = new SendMailInventory();
+                    mail.openInventory(player);
+                    return true;
+            	}
+                else if (target == player) {
+                	player.sendMessage(Text.SAMEPLAYER);
+                    return true;
+                }
+            	player.sendMessage(Text.PLAYER_NO_EXIST);
             }
-            else if (target == player) {
-            	player.sendMessage(Text.SAMEPLAYER);
-                return true;
+            else {
+            	player.sendMessage(Text.NOT_SURVIVAL_GM);
             }
-            player.sendMessage(Text.PLAYER_NO_EXIST);
             return true;
+
           } 
           if (args[0].equalsIgnoreCase("fav")) {
             if (args[1] == null) {
               player.sendMessage(Text.SPECIFY_PLAYER);
-              return true;
+              return true; 
             } 
             Player target = Bukkit.getPlayer(args[1]);
             if (target != null) {

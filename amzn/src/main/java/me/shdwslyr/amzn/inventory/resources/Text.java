@@ -54,6 +54,8 @@ public class Text {
   
   public static final String NO_PAGES = String.valueOf(String.valueOf(prefix)) + ChatColor.RED + "This is the last page!";
   
+  public static final String NOT_SURVIVAL_GM = String.valueOf(String.valueOf(prefix)) + ChatColor.RED + "You don't have any packages";
+  
   public static final NamespacedKey enchanter_namespace = new NamespacedKey((Plugin)Main.getMainInstance(), "smi");
   
   public static List<String> getCrateLore(List<ItemStack> itemList) {
